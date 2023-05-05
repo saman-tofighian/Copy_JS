@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            padding: 12px 28px;
+            background: green;
+            color: wheat;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <input type="text"> <br>
+    <button>Copy</button>
+    <h1>samantofighian78@gmail.com</h1>
+</body>
+<script>
+    document.getElementsByTagName('button')[0].addEventListener('click', function(){
+        let x =document.getElementsByTagName('input')[0]
+        x.select()
+        x.setSelectionRange(0 , 9999999)
+        navigator.clipboard.writeText(x.value)
+        alert('text copied')
+    })
+
+    document.getElementsByTagName('h1')[0].addEventListener('click', function(){
+        let _temp = document.getElementsByTagName('h1')[0]
+        navigator.clipboard.writeText(_temp.innerHTML)
+        alert('h1 copied')
+    })
+</script>
+</html>
